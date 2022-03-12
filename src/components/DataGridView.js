@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { DataGridPro} from '@mui/x-data-grid-pro';
-import { DataGrid} from '@mui/x-data-grid';
+import {DataGridPro} from '@mui/x-data-grid-pro';
+import {DataGrid, koKR} from '@mui/x-data-grid';
 import jsonData1 from './../testData#1.json'
 import {CreateColumnDef, CreateRows} from './DataGridUtil'
 
@@ -18,7 +18,11 @@ const DataGridView = () => {
 
   return (
     <div style={{ height: '100vh', width: '100%' }}>
-      <DataGrid rows={gridRows} columns={gridColumnDef} />
+      <DataGrid 
+        rows={gridRows} 
+        columns={gridColumnDef}
+        // density="compact" 
+        localeText={koKR.components.MuiDataGrid.defaultProps.localeText} />
     </div>
   );
 }
